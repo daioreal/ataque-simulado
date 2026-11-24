@@ -15,7 +15,7 @@ O ambiente foi estruturado no **Oracle VirtualBox** utilizando uma rede interna 
 * **Serviços Auditados:** FTP (porta 21), SMB (portas 139/445), SSH (porta 22) e Aplicação Web DVWA (porta 80)
 
 ### Estrutura do Repositório
-
+```
 ├── README.md                 # Documentação completa: reconhecimento, FTP, DVWA (com o diagnóstico do falso positivo do Medusa e a correção via Hydra), SMB e mitigações
 ├── wordlists/
 │   ├── users                 # Lista de usuários alvo (FTP/DVWA)
@@ -24,7 +24,7 @@ O ambiente foi estruturado no **Oracle VirtualBox** utilizando uma rede interna 
 ├── scripts/
 │   └── check_csrf_login.py   # Validação independente em Python (requests + BeautifulSoup) que confirma a credencial real e isola a causa do falso positivo do Medusa
 └── images/                   # Evidências de cada etapa: recon, Medusa no FTP, o falso positivo no DVWA, a correção com Hydra e o password spraying no SMB
-
+```
 ---
 
 ## 🔍 1. Reconhecimento
