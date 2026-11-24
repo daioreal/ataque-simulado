@@ -16,15 +16,14 @@ O ambiente foi estruturado no **Oracle VirtualBox** utilizando uma rede interna 
 
 ### Estrutura do Repositório
 
-```text
-├── README.md                 # Documentação completa do projeto
+├── README.md                 # Documentação completa: reconhecimento, FTP, DVWA (com o diagnóstico do falso positivo do Medusa e a correção via Hydra), SMB e mitigações
 ├── wordlists/
-│   ├── users                 # Lista de usuários alvo
-│   └── pass                  # Lista de senhas comuns
+│   ├── users                 # Lista de usuários alvo (FTP/DVWA)
+│   ├── pass                  # Lista de senhas comuns (FTP/DVWA)
+│   └── users_smb.txt         # 35 usuários enumerados via Enum4linux, usados no password spraying contra o SMB
 ├── scripts/
-│   └── check_csrf_login.py   # Script em Python para validação de sessão HTTP
-└── images/                   # Capturas de tela das evidências e execuções
-```
+│   └── check_csrf_login.py   # Validação independente em Python (requests + BeautifulSoup) que confirma a credencial real e isola a causa do falso positivo do Medusa
+└── images/                   # Evidências de cada etapa: recon, Medusa no FTP, o falso positivo no DVWA, a correção com Hydra e o password spraying no SMB
 
 ---
 
